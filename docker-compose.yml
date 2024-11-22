@@ -1,0 +1,19 @@
+version: "3.8"
+
+x-environment: &environment
+  POSTGRES_USER: elysia
+  POSTGRES_PASSWORD: elysia
+  POSTGRES_DB: elysia-todo
+
+services:
+  elysia:
+    build: .
+    command: npm run dev
+    environment:
+      <<: *environment
+  postgres:
+    image: postgres:13
+    environment:
+      <<: *environment
+    ports:
+      - "5432:5432"
