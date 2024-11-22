@@ -2,11 +2,13 @@ import { Elysia } from "elysia";
 import swagger from "@elysiajs/swagger";
 import { jwt } from '@elysiajs/jwt';
 import { cookie } from '@elysiajs/cookie';
+import { cors } from '@elysiajs/cors'
 import AuthRoute from "./routes/auth/auth.route";
 import userRoute from "./routes/user/users.route";
 import todoRoute from "./routes/todos/todo.route";
 
 const app = new Elysia()
+  .use(cors())
   .use(swagger())
   .use(
     jwt({

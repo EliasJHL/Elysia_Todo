@@ -1,5 +1,5 @@
 import { Elysia } from "elysia";
-import { client } from "@database/database";
+import { database } from "@database/database";
 
 export default new Elysia({"name": "users"}).group("/users", (group) =>
     group
