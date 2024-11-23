@@ -3,7 +3,7 @@
 ## Presentation
 Created using [ElydiaJS](https://elysiajs.com/)
 
-Basic project creating a backend of a Todo app, based of the same project [EpyTodo](https://github.com/EliasJHL/EPyTodo) using ExpressJS
+Basic project creating a backend of a Todo app, based of the same project [EpyTodo](https://github.com/EliasJHL/EPyTodo) using ExpressJS who is a **outdated version**
 
 ## Database
 The database is managed with [TypeORM](https://typeorm.io/) an ORM tool in TypeScript the models are in `/src/entity/`.
