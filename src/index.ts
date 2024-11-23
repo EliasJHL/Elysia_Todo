@@ -6,6 +6,10 @@ import { cors } from '@elysiajs/cors'
 import AuthRoute from "./routes/auth/auth.route";
 import userRoute from "./routes/user/users.route";
 import todoRoute from "./routes/todos/todo.route";
+import { AppDataSource } from "./data-source";
+import "reflect-metadata";
+
+await AppDataSource.initialize();
 
 const app = new Elysia()
   .use(cors())
