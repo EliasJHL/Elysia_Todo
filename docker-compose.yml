@@ -9,7 +9,6 @@ services:
     container_name: elysia-todo-postgres
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-    # Setup a volume to save the data
     environment:
       <<: *environment
     ports:
