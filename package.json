@@ -13,6 +13,7 @@
     "@types/bcrypt": "^5.0.2",
     "bcryptjs": "^2.4.3",
     "elysia": "latest",
+    "luxon": "^3.5.0",
     "pg": "^8.13.1",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.20"

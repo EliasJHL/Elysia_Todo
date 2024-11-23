@@ -18,10 +18,10 @@ export class Todo {
     @Column()
     'description': string;
 
-    @Column('timestamp')
+    @Column('timestamp', { default: () => "CURRENT_TIMESTAMP" })
     'created_at': Date;
 
-    @Column('timestamp')
+    @Column('timestamp', { default: () => "CURRENT_TIMESTAMP" })
     'due_time': Date;
 
     @Column('enum', { enum: TodoStatus, default: TodoStatus.NOT_STARTED })

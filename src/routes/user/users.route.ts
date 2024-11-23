@@ -39,32 +39,4 @@ export default new Elysia({"name": "users"}).group("/users", (group) =>
 
             return { status: 200, body: user };
         })
-        //=================
-        // Get user todos
-        //=================
-        .get('/todos', async ({ body, jwt, cookie: { auth }, params}) => {
-            const profile = await jwt.verify(auth.value)
-        
-            if (!profile) {
-                return { status: 401, body:'Unauthorized' }
-            }
-
-            const user_repo = AppDataSource.getRepository(User)
-
-            const user = await user_repo.findOne({
-                where: {email: profile.email}
-            });
-
-            if (!user) {
-                return { status: 401, body:'Unauthorized' }
-            }
-
-            const todos_repo = AppDataSource.getRepository(Todo)
-
-            const todos = await todos_repo.find({
-                where: {user_id: user.id}
-            });
-
-            return { status: 200, body: todos };
-        })
 )
