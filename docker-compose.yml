@@ -13,3 +13,16 @@ services:
       <<: *environment
     ports:
       - "5435:5432"
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: elysia-todo-api
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      <<: *environment
+    depends_on:
+      - postgres

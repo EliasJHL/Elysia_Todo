@@ -3,8 +3,8 @@ import { Coord } from "./entity/Coord";
 
 export const AppDataSource = new DataSource({
     type: "postgres",
-    host: "localhost",
-    port: 5435,
+    host: "postgres",
+    port: 5432,
     username: "elysia",
     password: "elysia",
     database: "elysia-todo",
