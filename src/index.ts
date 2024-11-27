@@ -1,30 +1,12 @@
 import { Elysia } from "elysia";
-import swagger from "@elysiajs/swagger";
-import { jwt } from '@elysiajs/jwt';
-import { cookie } from '@elysiajs/cookie';
-import { cors } from '@elysiajs/cors'
-import AuthRoute from "./routes/auth/auth.route";
-import userRoute from "./routes/user/users.route";
-import todoRoute from "./routes/todos/todo.route";
+import  CoordRoute  from "./routes/coord/coord.route";
 import { AppDataSource } from "./data-source";
 import "reflect-metadata";
 
 await AppDataSource.initialize();
 
 const app = new Elysia()
-  .use(cors())
-  .use(swagger())
-  .use(
-    jwt({
-      name: "jwt",
-      secret: process.env.JWT_SECRET ||
-        "default_secret",
-    })
-  )
-  .use(cookie())
-  .use(AuthRoute)
-  .use(userRoute)
-  .use(todoRoute)
+  .use(CoordRoute)
   .get("/", () => "Hello Elysia")
   .listen(3000);
 

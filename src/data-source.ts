@@ -1,6 +1,5 @@
 import { DataSource } from "typeorm";
-import { User } from "./entity/User";
-import { Todo } from "./entity/Todo";
+import { Coord } from "./entity/Coord";
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -11,7 +10,7 @@ export const AppDataSource = new DataSource({
     database: "elysia-todo",
     synchronize: true,
     logging: true,
-    entities: [User, Todo],
+    entities: [Coord],
     subscribers: [],
     migrations: [],
 })
